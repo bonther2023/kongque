@@ -1,0 +1,524 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body, html {
+    font-family: '微软雅黑', 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background: rgb(241, 242, 247);
+    width: 100%;
+    height: 100%;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #409eff;
+    -webkit-box-shadow: inset 0 0 6px #409eff;
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+[v-cloak] {
+    display: none !important;
+}
+
+i {
+    font-style: normal;
+}
+
+/****************布局*******************/
+.main {
+    padding-top: 65px;
+    min-height: calc(100vh - 45px);
+}
+
+.main .content {
+    width: 100%;
+}
+
+.main .content .panel-content {
+    margin: 15px 15px 0 175px;
+    min-height: calc(100vh - 135px);
+    position: relative;
+    background: #fff;
+    border-radius: 5px;
+    padding: 15px 15px 0;
+}
+
+/****************header*****************/
+.header {
+    background: rgb(42, 53, 66);
+    width: 100%;
+    height: 65px;
+    line-height: 65px;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 1002;
+    position: fixed;
+}
+
+.header .header-logo {
+    float: left;
+    text-align: center;
+    width: 160px;
+    font-size: 22px;
+    color: #fff;
+}
+
+.header .header-logo span {
+    color: #409eff;
+}
+
+.header .header-user {
+    padding-right: 15px;
+    float: right;
+    color: #fff;
+}
+.header .header-user ul{
+    margin-block-start: 10px;
+    -webkit-margin-before: 10px;
+}
+.header .header-user ul li{
+    float: left;list-style: none;margin-left: 15px;line-height: 45px;
+}
+.header .header-user .header-user-avatar {
+    width: 45px;height: 45px;border-radius: 50%;
+}
+
+.header .header-user a {
+    margin-left: 15px;
+}
+
+.header .header-user a:hover {
+    color: #409eff;
+}
+
+/****************menu*****************/
+.menu {
+    width: 160px;
+    overflow: hidden;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    background: rgb(42, 53, 66);
+    border-top: 1px solid #fff;
+}
+
+.menu .el-menu {
+    border-right: none;
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li a {
+    width: 100%;
+    padding: 15px 15px;
+    float: left;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu ul li a i.fa {
+    width: 25px;
+    height: 14px;
+}
+
+.menu span.fa-angle-right {
+    float: right;
+    right: 20px;
+    position: absolute;
+    line-height: 20px;
+    font-size: 14px;
+    -o-transition: transform .2s linear;
+    -moz-transition: transform .2s linear;
+    -webkit-transition: transform .2s linear;
+    -ms-transition: transform .2s linear
+}
+
+.menu .angle-down > span.fa-angle-right {
+    -ms-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+
+.menu ul ul.submenu, .menu ul ul.submenu li ul.submenu {
+    width: 100%;
+    display: none;
+    position: static
+}
+
+.menu ul ul.submenu li a {
+    padding-left: 40px !important;
+}
+
+.menu li.active a {
+    background: rgb(22, 31, 31);
+    color: #409eff;
+}
+
+.menu ul ul.submenu li:hover a {
+    color: #409eff;
+}
+
+/****************footer*****************/
+.footer {
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+}
+
+/*****************正文*******************/
+.panel-header {
+    width: 100%;
+}
+
+.panel-header .el-tabs__nav {
+    float: right;
+}
+
+.panel-header .panel-title {
+    border-left: 4px solid #409eff;
+    padding-left: 10px;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.panel-header .panel-title span {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.panel-header .panel-title span em {
+    color: red;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.panel-info .panel-header, .panel-home .panel-header, .panel-list .panel-header {
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 15px;
+    padding-top: 5px;
+}
+
+.panel-info .panel-header .panel-title, .panel-home .panel-header .panel-title, .panel-list .panel-header .panel-title {
+    bottom: 20px;
+    position: static;
+}
+
+.panel-list .panel-main {
+    padding: 20px 0;
+    margin-bottom: 15px;
+}
+
+.panel-main {
+    padding: 20px 0 0;
+}
+
+.panel-info .panel-main {
+    padding: 20px 125px 0;
+    margin-bottom: 15px;
+}
+
+.panel-main .panel-btns {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.panel-main .panel-search {
+    width: 100%;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.panel-main .panel-search .panel-search-item {
+    float: right;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+.panel-main.access .access-p {
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 15px;
+    padding-left: 40px;
+}
+
+.panel-main.access .access-p:first-child {
+    margin-top: 0;
+}
+
+.panel-main.access .access-span {
+    float: left;
+    line-height: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.panel-main.access .el-form-item {
+    margin-bottom: 0;
+}
+
+.panel-info .form {
+    padding-bottom: 55px;
+}
+
+.panel-info .form .el-input__inner {
+    border: none;
+    border-bottom: 1px solid #ececec;
+    border-radius: 0;
+}
+
+.panel-home .home-count {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.panel-home .home-count .count-item {
+    width: 25%;
+    margin: 0 15px;
+    position: relative;
+    min-height: 174px;
+    color: #ffffff;
+    padding: 12px 17px 12px 22px;
+    border-radius: 5px;
+}
+
+.panel-home .home-count .count-item.good-count {
+    background: linear-gradient(-125deg, #2f9de2, #57c8f2);
+}
+
+.panel-home .home-count .count-item.user-count {
+    background: linear-gradient(-125deg, #ff6c60, #fb2c95);
+}
+
+.panel-home .home-count .count-item.order-count {
+    background: linear-gradient(-113deg, #c543d8, #925cc3);
+}
+
+.panel-home .home-count .count-item.recharge-count {
+    background: linear-gradient(-141deg, #ecca1b, #f39526);
+}
+
+.panel-home .home-count .card-header {
+    position: relative;
+    display: block;
+    padding-top: 18px;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.panel-home .home-count .card-number {
+    position: relative;
+    font-weight: 300;
+    display: block;
+    color: #fff;
+    font-size: 38px;
+    line-height: 46px;
+    margin-bottom: 8px;
+}
+
+.panel-home .home-count .card-description {
+    position: relative;
+    display: block;
+    font-size: 12px;
+    line-height: 12px;
+    padding-top: 8px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.panel-home .home-count i.fa {
+    position: absolute;
+    right: 25px;
+    top: 35px;
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.12);
+}
+
+.panel-home .home-count {
+    margin-bottom: 20px;
+}
+
+.panel-home .home-realtime {
+    display: flex;
+}
+
+.panel-home .home-realtime .realtime-item {
+    width: 33%;
+    margin: 0 15px;
+    display: flex;
+    min-height: 174px;
+    padding: 0 17px 12px 25px;
+    border-radius: 5px;
+}
+
+.panel-home .home-realtime .card-body {
+    display: inline-block;
+}
+
+.panel-home .home-realtime .card-header {
+    padding-top: 18px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.panel-home .home-realtime .card-number {
+    color: #111;
+    font-size: 24px;
+    line-height: 46px;
+}
+
+.panel-home .home-realtime .card-description {
+    color: rgb(153, 153, 153);
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.panel-home .home-realtime .card-icon {
+    position: relative;
+    left: 0;
+    top: 25px;
+    border: 1px solid rgb(239, 246, 255);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    margin-right: 15px;
+    background: rgb(239, 246, 255);
+    vertical-align: middle;
+}
+
+.panel-home .home-realtime .card-icon div {
+    position: relative;
+    top: 10px;
+    left: 12px;
+    border: 1px solid #2f9de2;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.panel-home .home-realtime i.fa {
+    position: relative;
+    top: 3px;
+    font-size: 24px;
+    color: #2f9de2;
+}
+
+
+/****************分页*****************/
+.pagination {
+    text-align: right;
+    width: 100%;
+}
+
+.pagination .el-pagination {
+    white-space: nowrap;
+    padding: 25px 0px;
+    color: #303133;
+    font-weight: 700;
+}
+
+.pagination .el-pagination.is-background .btn-next,
+.pagination .el-pagination.is-background .btn-prev {
+    padding: 0 5px
+}
+
+/****************重置element UI公有样式*****************/
+.el-message-box__status.el-icon-warning {
+    color: #ff2305c4;
+}
+
+.el-table {
+
+}
+
+.el-table thead {
+    color: #333333;
+}
+
+.el-alert.el-alert--primary {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #fbfdff;
+    border: 1px solid #dfeffd;
+    white-space: normal;
+    font-size: 14px;
+    color: #2f9de2;
+}
+
+.el-cascader-menu__item {
+    height: 40px;
+}
+
+.el-date-editor .el-range-separator {
+    padding: 0;
+}
+
+.avatar-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.avatar-uploader-icon {
+    border: 1px dashed #d9d9d9;
+    font-size: 28px;
+    color: #8c939d;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    line-height: 100px;
+    text-align: center;
+}
+
+.el-cascader-menu {
+     height: auto;
+}
+
+
+.panel-info .el-input-group__append,.panel-info .el-input-group__prepend {
+     background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ececec;
+    border-radius: 0;
+}
+
+
+
+
+
+
